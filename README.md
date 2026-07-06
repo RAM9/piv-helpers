@@ -61,6 +61,17 @@ Each script requires a prefix (slot number) and Common Name. Use an email or dom
 
 ### Pair with macOS
 
+Note: In 26.4 (Tahoe)
+
+After installing the 9a and 9d identities - removing your yubikey and re-inserting it will create
+a system dialog that will prompt you to pair the key with your identity. You will be required to
+enter your password, enter you pin for your yubikey and then enter your password again for the keychain.
+
+This will establish your `sc_auth identities`
+
+Prior to Tahoe:
+
+
 **Prerequisites:** YubiKey must have a PIN set and both certificates loaded.
 
 1. **Find your identity:**
@@ -79,6 +90,11 @@ Each script requires a prefix (slot number) and Common Name. Use an email or dom
    ```
 
 Your YubiKey is now ready for passwordless authentication. You can test by logging out and back in using only your YubiKey PIN.
+
+You can test it by switching to root in a terminal.
+
+`sudo su -` will now prompt you to validate your PIV identity
+
 
 ## Troubleshooting
 
